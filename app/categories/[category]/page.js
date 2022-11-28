@@ -43,3 +43,10 @@ const Category = async ({ params: { category } }) => {
 };
 
 export default Category;
+export async function generateStaticParams() {
+  const { blog_folder } = config.settings;
+  const allCategories = getTaxonomy(`content/${blog_folder}`, "categories");
+  return allCategories.map((category) => ({
+    category: category,
+  }));
+}

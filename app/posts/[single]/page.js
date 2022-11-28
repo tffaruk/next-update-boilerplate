@@ -40,3 +40,6 @@ const Single = async ({ params: { single } }) => {
 };
 
 export default Single;
+
+
+

@@ -43,7 +43,7 @@ export default RegularPages;
 
 // genarate static slug
 export async function generateStaticParams() {
-  const posts = getSinglePage("content/posts");
+  const posts = getSinglePage("content");
   console.log(posts);
   return posts.map((post) => ({
     regular: post.slug,

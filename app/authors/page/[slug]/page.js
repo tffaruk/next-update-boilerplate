@@ -56,3 +56,19 @@ const AuthorPagination = async ({ params: { slug } }) => {
 };
 
 export default AuthorPagination;
+
+// genarate static slug
+export async function generateStaticParams() {
+  const { pagination } = config.settings;
+  const authors = getSinglePage("content/authors");
+  const totalPages = Math.ceil(authors.length / pagination);
+  let paths = [];
+  for (let i = 1; i < totalPages; i++) {
+    paths.push({
+      slug: (i + 1).toString(),
+    });
+  }
+  return paths.map((path) => ({
+    slug: path.slug,
+  }));
+}

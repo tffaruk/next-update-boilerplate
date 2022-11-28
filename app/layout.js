@@ -6,6 +6,7 @@ import { JsonContext } from "context/state";
 
 import "styles/style.scss";
 import { Providers } from "@layouts/components/Provider";
+import ThemeSwitcher from "@layouts/components/ThemeSwitcher";
 export default function RootLayout({ children }) {
   const { favicon } = config.site;
   return (
@@ -29,6 +30,7 @@ export default function RootLayout({ children }) {
       </head>
      
         <body>
+          <ThemeSwitcher/>
         <JsonContext>
           <Providers>
             <Header />
