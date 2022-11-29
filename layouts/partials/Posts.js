@@ -67,7 +67,7 @@ const Posts = ({ posts, authors }) => {
               </ul>
             </li>
           </ul>
-          <h2 className="h3 mb-2">
+          <h2 className={`h3 mb-2 font-medium`}>
             <Link
               href={`/${blog_folder}/${post.slug}`}
               className="block hover:text-primary"

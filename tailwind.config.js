@@ -29,7 +29,6 @@ module.exports = {
     "./layouts/**/*.{js,ts,jsx,tsx}",
     "./content/**/*.{md,mdx}",
     "./app/**/*.{js,ts,jsx,tsx}",
-
   ],
   darkMode: "class",
   theme: {
@@ -79,9 +78,12 @@ module.exports = {
         h5: h5 + "rem",
         h6: h6 + "rem",
       },
+      // fontFamily: {
+      //   primary: [fontPrimary, fontPrimaryType],
+      //   secondary: [fontSecondary, fontSecondaryType],
+      // },
       fontFamily: {
-        primary: [fontPrimary, fontPrimaryType],
-        secondary: [fontSecondary, fontSecondaryType],
+        sans: ["var(--font-inter)"],
       },
     },
   },
