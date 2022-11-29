@@ -6,10 +6,10 @@ const nextConfig = {
   reactStrictMode: true,
   experimental: {
     appDir: true,
+    fontLoaders: [
+      { loader: "@next/font/google", options: { subsets: ["normal"] } },
+    ],
   },
-  fontLoaders: [
-    { loader: '@next/font/google' },
-  ],
 };
 
 module.exports = nextConfig;

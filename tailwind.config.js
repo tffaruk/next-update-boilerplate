@@ -83,10 +83,11 @@ module.exports = {
       //   secondary: [fontSecondary, fontSecondaryType],
       // },
       fontFamily: {
-        sans: ["var(--font-inter)"],
+        sans: ["var(--font-font)"],
       },
     },
   },
+  
   plugins: [
     require("@tailwindcss/typography"),
     require("@tailwindcss/forms"),

@@ -8,7 +8,6 @@ import { notFound } from "next/navigation";
 
 const cuurentPageData = async (page) => {
   const currentPage = parseInt(page ? page : 1);
-
   const { pagination, blog_folder } = config.settings;
   const authors = getSinglePage("content/authors");
   // get list page

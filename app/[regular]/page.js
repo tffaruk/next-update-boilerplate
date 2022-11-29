@@ -3,7 +3,6 @@ import Contact from "@layouts/Contact";
 import Default from "@layouts/Default";
 import { getRegularPage, getSinglePage } from "@lib/contentParser";
 import Head from "app/head";
-import { notFound } from "next/navigation";
 
 const allRegulerPages = async (regular) => {
   const allPages = await getRegularPage(regular);

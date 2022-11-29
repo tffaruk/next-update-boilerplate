@@ -11,7 +11,7 @@ const GTM = () => {
         setGtm(true);
     }, 5000);
   }, []);
-  console.log(gtm);
+
   return (
     <>
       {gtm && (

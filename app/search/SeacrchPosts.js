@@ -3,17 +3,15 @@ import Posts from "@layouts/partials/Posts";
 import React, { use } from "react";
 import { useSearchContext } from "context/state";
 import { slugify } from "@lib/utils/textConverter";
-
 import Head from "app/head";
 import { useSearchParams } from "next/navigation";
 
 const SeacrchPosts = ({ authors }) => {
-const searchParams=useSearchParams()
-const key=searchParams.get("key")
-const keyword=slugify(key)
-    
+  const searchParams = useSearchParams();
+  const key = searchParams.get("key");
+  const keyword = slugify(key);
   const { posts } = useSearchContext();
- const searchResults = posts.filter((product) => {
+  const searchResults = posts.filter((product) => {
     if (slugify(product.frontmatter.title).includes(keyword)) {
       return product;
     } else if (
@@ -32,20 +30,21 @@ const keyword=slugify(key)
   });
   return (
     <>
-    <Head title={`Search results for ${keyword}`} />
-    <div className="section">
-      <div className="container">
-        <h1 className="h2 mb-8 text-center">
-          Search results for{" "}
-          <span className="text-primary">{keyword}</span>
-        </h1>
-      {searchResults.length > 0 ? (
-        <Posts posts={searchResults} authors={authors} />
-      ) : (
-        <div className="py-24 text-center text-h3 shadow">No Search Found</div>
-      )}
-    </div>
-    </div>
+      <Head title={`Search results for ${keyword}`} />
+      <div className="section">
+        <div className="container">
+          <h1 className="h2 mb-8 text-center">
+            Search results for <span className="text-primary">{keyword}</span>
+          </h1>
+          {searchResults.length > 0 ? (
+            <Posts posts={searchResults} authors={authors} />
+          ) : (
+            <div className="py-24 text-center text-h3 shadow">
+              No Search Found
+            </div>
+          )}
+        </div>
+      </div>
     </>
   );
 };

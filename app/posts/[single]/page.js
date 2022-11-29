@@ -4,7 +4,6 @@ import { getSinglePage } from "@lib/contentParser";
 import { parseMDX } from "@lib/utils/mdxParser";
 import { notFound } from "next/navigation";
 
-
 // server function
 const allposts = async (single) => {
   const { blog_folder } = config.settings;
@@ -40,6 +39,3 @@ const Single = async ({ params: { single } }) => {
 };
 
 export default Single;
-
-
-

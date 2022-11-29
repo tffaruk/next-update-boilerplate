@@ -31,8 +31,3 @@ const TestPage = async () => {
   );
 };
 export default TestPage;
-
-// for regular page data
-// export const getStaticProps = async () => {
-
-// };
