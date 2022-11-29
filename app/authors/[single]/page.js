@@ -30,4 +30,13 @@ const Article = async ({ params: { single } }) => {
   );
 };
 
+// genarate static path
+export const generateStaticParams = async () => {
+  const posts = getSinglePage("content/authors");
+  console.log(posts);
+  return posts.map((post) => ({
+    single: post.slug,
+  }));
+};
+
 export default Article;
