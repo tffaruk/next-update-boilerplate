@@ -39,3 +39,11 @@ const Single = async ({ params: { single } }) => {
 };
 
 export default Single;
+// genarate static path
+export const generateStaticParams = async () => {
+  const posts = getSinglePage("content/posts");
+
+  return posts.map((post) => ({
+    single: post.slug,
+  }));
+};
