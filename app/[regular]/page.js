@@ -41,11 +41,10 @@ const RegularPages = async ({ params: { regular } }) => {
 };
 export default RegularPages;
 
-// genarate static slug
-export async function generateStaticParams() {
+// genarate static path
+export const generateStaticParams = async () => {
   const posts = getSinglePage("content");
-  console.log(posts);
   return posts.map((post) => ({
     regular: post.slug,
   }));
-}
+};

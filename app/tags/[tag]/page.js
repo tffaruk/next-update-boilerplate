@@ -38,5 +38,13 @@ const Tag = async ({ params: { tag } }) => {
     </>
   );
 };
-
 export default Tag;
+
+// static path genrator
+export const generateStaticParams = async () => {
+  const { blog_folder } = config.settings;
+  const allTags = getTaxonomy(`content/${blog_folder}`, "tags");
+  return allTags.map((tag) => ({
+    tag: tag,
+  }));
+};

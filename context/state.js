@@ -15,6 +15,5 @@ export const JsonContext = ({ children }) => {
 };
 
 export const useSearchContext = () => {
-  console.log(typeof useContext(SearchContext));
   return useContext(SearchContext);
 };

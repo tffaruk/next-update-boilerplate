@@ -3,10 +3,8 @@ import Footer from "@partials/Footer";
 import Header from "@partials/Header";
 import config from "@config/config.json";
 import { JsonContext } from "context/state";
-
 import "styles/style.scss";
 import { Providers } from "@layouts/components/Provider";
-import ThemeSwitcher from "@layouts/components/ThemeSwitcher";
 export default function RootLayout({ children }) {
   const { favicon } = config.site;
   return (
@@ -28,18 +26,16 @@ export default function RootLayout({ children }) {
           content="#000"
         />
       </head>
-     
-        <body>
-          <ThemeSwitcher/>
+
+      <body>
         <JsonContext>
           <Providers>
             <Header />
             {children}
             <Footer />
           </Providers>
-          </JsonContext>
-        </body>
-     
+        </JsonContext>
+      </body>
     </html>
   );
 }

@@ -69,7 +69,7 @@ const Pagignation = async ({ params: { page: currentPage } }) => {
 export default Pagignation;
 
 // genarate static path
-export async function generateStaticParams() {
+export const generateStaticParams = async () => {
   const { pagination } = config.settings;
   const posts = getSinglePage("content/posts");
   const totalPages = Math.ceil(posts.length / pagination);
@@ -83,4 +83,4 @@ export async function generateStaticParams() {
   return paths.map((path) => ({
     page: path.page,
   }));
-}
+};
