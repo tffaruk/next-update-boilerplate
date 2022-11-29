@@ -3,7 +3,7 @@ import Logo from "@components/Logo";
 import ThemeSwitcher from "@components/ThemeSwitcher";
 import config from "@config/config.json";
 import menu from "@config/menu.json";
-import SearchModal from "@layouts/partials/SearchModal";
+import SearchModal from "app/search/SearchModal";
 import { useTheme } from "next-themes";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
