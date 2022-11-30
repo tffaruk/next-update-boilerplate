@@ -8,11 +8,13 @@ const SearchModal = ({ searchModal, setSearchModal }) => {
   const [input, setInput] = useState("");
 
   useEffect(() => {
+    router.prefetch(`/search?key=${input}`);
     if (searchModal) {
       document.getElementById("searchModal").focus();
       document.addEventListener("keydown", (e) => {
         if (e.key === "Enter") {
           router.push(`/search?key=${input}`);
+
           setSearchModal(false);
         }
         if (e.key === "Escape") {

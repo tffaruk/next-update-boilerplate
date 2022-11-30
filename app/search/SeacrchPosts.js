@@ -9,12 +9,12 @@ import Head from "app/head";
 const SeacrchPosts = ({ authors, searchParams }) => {
   // const searchParams = useSearchParams();
   // const key = searchParams.get("key");
-  const [keys, setKeys] = useState(searchParams.key);
-  useEffect(() => {
-    setKeys(searchParams.key);
-  });
-  console.log(searchParams.key);
-  const keyword = slugify(keys);
+
+  // useEffect(() => {
+  //   location.reload();
+  // });
+
+  const keyword = slugify(searchParams.key);
   const { posts } = useSearchContext();
   const searchResults = posts.filter((product) => {
     if (slugify(product.frontmatter.title).includes(keyword)) {
