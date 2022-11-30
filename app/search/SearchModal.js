@@ -21,11 +21,13 @@ const SearchModal = ({ searchModal, setSearchModal }) => {
       });
     }
   });
+
   return (
     <div className={`search-modal ${searchModal ? "open" : ""}`}>
       <button onClick={() => setSearchModal(false)} className="search-close">
         <IoCloseCircleOutline />
       </button>
+
       <input
         type="text"
         className="form-input"

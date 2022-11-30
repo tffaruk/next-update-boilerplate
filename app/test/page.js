@@ -1,24 +1,13 @@
 import Default from "@layouts/Default";
 import { getListPage } from "@lib/contentParser";
 import Head from "app/head";
-import { notFound } from "next/navigation";
-
-const regularPageData = async () => {
-  const testPage = await getListPage("content/test/_index.md");
-  if (!testPage) {
-    notFound()
-  }
-  return {
-    data: testPage,
-  };
-};
 
 // for all regular pages
 const TestPage = async () => {
-  const { data } = await regularPageData();
+  const testPage = await getListPage("content/test/_index.md");
   const { title, meta_title, description, image, noindex, canonical } =
-    data.frontmatter;
-  const { content } = data;
+    testPage.frontmatter;
+  const { content } = testPage;
 
   return (
     <>
@@ -30,13 +19,8 @@ const TestPage = async () => {
         noindex={noindex}
         canonical={canonical}
       />
-      <Default data={data} />
+      <Default data={testPage} />
     </>
   );
 };
 export default TestPage;
-
-// export const generateStaticParams = async () => {
-//   const posts = getListPage("content/test/_index.md");
-//   console.log(posts);
-// };
