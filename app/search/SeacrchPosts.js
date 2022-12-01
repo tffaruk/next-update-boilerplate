@@ -7,13 +7,6 @@ import Head from "app/head";
 // import { useSearchParams } from "next/navigation";
 
 const SeacrchPosts = ({ authors, searchParams }) => {
-  // const searchParams = useSearchParams();
-  // const key = searchParams.get("key");
-
-  // useEffect(() => {
-  //   location.reload();
-  // });
-
   const keyword = slugify(searchParams.key);
   const { posts } = useSearchContext();
   const searchResults = posts.filter((product) => {
@@ -36,6 +29,7 @@ const SeacrchPosts = ({ authors, searchParams }) => {
   return (
     <>
       <Head title={`Search results for ${keyword}`} />
+
       <div className="section">
         <div className="container">
           <h1 className="h2 mb-8 text-center">

@@ -6,10 +6,9 @@ import { IoCloseCircleOutline } from "react-icons/io5";
 const SearchModal = ({ searchModal, setSearchModal }) => {
   const router = useRouter();
   const [input, setInput] = useState("");
-
+  router.prefetch(`/search?key=${input}`);
   useEffect(() => {
     if (searchModal) {
-      router.prefetch(`/search?key=${input}`);
       document.getElementById("searchModal").focus();
       document.addEventListener("keydown", (e) => {
         if (e.key === "Enter") {
