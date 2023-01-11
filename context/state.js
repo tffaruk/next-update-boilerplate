@@ -1,5 +1,6 @@
 "use client";
 import { createContext, useContext } from "react";
+
 import posts from "../.json/posts.json";
 
 const SearchContext = createContext();

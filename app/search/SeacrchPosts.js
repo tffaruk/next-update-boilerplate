@@ -1,6 +1,6 @@
 "use client";
 import Posts from "@layouts/partials/Posts";
-import React, { useEffect, useState } from "react";
+
 import { useSearchContext } from "context/state";
 import { slugify } from "@lib/utils/textConverter";
 import Head from "app/head";
