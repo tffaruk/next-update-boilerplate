@@ -8,6 +8,7 @@ import Head from "app/head";
 
 const SeacrchPosts = ({ authors, searchParams }) => {
   const keyword = slugify(searchParams.key);
+  console.log(keyword);
   const { posts } = useSearchContext();
   const searchResults = posts.filter((product) => {
     if (slugify(product.frontmatter.title).includes(keyword)) {
