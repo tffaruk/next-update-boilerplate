@@ -4,16 +4,18 @@ import config from "@config/config.json";
 import { JsonContext } from "context/state";
 import "styles/style.scss";
 import ThemeProviders from "app/ThemeProviders";
-import { Roboto } from "@next/font/google";
+import { Roboto } from "next/font/google";
 import GTM from "./GTM";
 
 const font = Roboto({
   variable: "--font-roboto",
   weight: ["400", "500", "700"],
+  preload: false,
 });
 
 export default async function RootLayout({ children }) {
   const { favicon } = config.site;
+
   return (
     <html className={font.className}>
       <head title="nxt boilerplate">
